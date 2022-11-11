@@ -45,6 +45,8 @@ function startTimer() {
   timerId = setInterval(()=> {
     const { days, hours, minutes, seconds } = convertMs(delta)
     if (seconds < 0) {
+      Notiflix.Notify.success("Congratulations, we have reached our goal!");
+      clearInterval(timerId)
       return
     }
     daysEl.textContent = days;
