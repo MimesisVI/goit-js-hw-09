@@ -44,6 +44,9 @@ function startTimer() {
 
   timerId = setInterval(()=> {
     const { days, hours, minutes, seconds } = convertMs(delta)
+    if (seconds < 0) {
+      return
+    }
     daysEl.textContent = days;
     hoursEl.textContent = hours;
     minutesEl.textContent = minutes;
